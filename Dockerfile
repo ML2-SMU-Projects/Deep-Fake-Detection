@@ -5,7 +5,7 @@ FROM nvidia/cuda:9.2-base-ubuntu18.04
 
 # Install some basic utilities
 RUN apt-get update && apt-get install -y \
-    curl \
+    curl \ 
     ca-certificates \
     sudo \
     git \
