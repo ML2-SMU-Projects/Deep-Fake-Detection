@@ -112,6 +112,7 @@ venv.bak/
 
 # VSCode extensions
 .vscode/*
+.devcontainer/*
 
 # Spyder project settings
 .spyderproject
