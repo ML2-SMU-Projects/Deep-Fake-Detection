@@ -44,5 +44,8 @@ RUN conda install -y -c pytorch \
     "torchvision=0.6.0=py38_cu92" \
  && conda clean -ya
 
+RUN mkdir /home/user/scripts
+ADD scripts /home/user/scripts
+
 # Set the default command to python3
 CMD ["python3"]
