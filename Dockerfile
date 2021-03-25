@@ -48,4 +48,4 @@ RUN mkdir /home/user/scripts
 ADD scripts /home/user/scripts
 
 # Set the default command to python3
-# CMD ["python3"]
+CMD ["bash"]

@@ -17,8 +17,10 @@ CONTAINER_NAME="deepfakedetection-env"
 
 if [[ $action == "build" ]]; then
     docker build -t deepfakedetection-$(whoami):dev .
-elif [[ $action == "run" ]]; then
+elif [[ $action == "debug" ]]; then
     docker run --name $CONTAINER_NAME -it deepfakedetection-$(whoami):dev
+elif [[ $action == 'run' ]]; then
+    docker run --name $CONTAINER_NAME -d deepfakedetection-$(whoami):dev
 elif [[ $action == "stop" ]]; then
     docker container stop $CONTAINER_NAME
     docker container rm $CONTAINER_NAME
