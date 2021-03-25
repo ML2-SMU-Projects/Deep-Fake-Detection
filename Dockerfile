@@ -47,5 +47,5 @@ RUN conda install -y -c pytorch \
 RUN mkdir /home/user/scripts
 ADD scripts /home/user/scripts
 
-# Set the default command to python3
+# Set the default command to bash
 CMD ["bash"]
