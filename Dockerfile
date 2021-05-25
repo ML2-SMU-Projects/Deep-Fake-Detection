@@ -1,7 +1,9 @@
-# Image pulled from this repo
+# Image pulled and modified from this repo
 # https://github.com/anibali/docker-pytorch/blob/master/dockerfiles/1.5.0-cuda9.2-ubuntu18.04/Dockerfile
 
 FROM nvidia/cuda:9.2-base-ubuntu18.04
+
+LABEL maintainer="Kay-Ayala@protonmail.com"
 
 # Install some basic utilities
 RUN apt-get update && apt-get install -y \
@@ -46,6 +48,8 @@ RUN conda install -y -c pytorch \
 
 RUN mkdir /home/user/scripts
 ADD scripts /home/user/scripts
+
+RUN git clone https://github.com/ML2-SMU-Projects/Deep-Fake-Detection.git
 
 # Set the default command to bash
 CMD ["bash"]
