@@ -14,11 +14,12 @@ action=$1
 
 # const
 CONTAINER_NAME="deepfakedetection-env"
+MOUNT_PATH=$(pwd)
 
 if [[ $action == "build" ]]; then
     docker build -t deepfakedetection-$(whoami):dev .
 elif [[ $action == "debug" ]]; then
-    docker run --name $CONTAINER_NAME -it deepfakedetection-$(whoami):dev
+    docker run --name $CONTAINER_NAME -it -v $MOUNT_PATH:/home/user/tmp:delegated deepfakedetection-$(whoami):dev
 elif [[ $action == 'run' ]]; then
     docker run --name $CONTAINER_NAME -d deepfakedetection-$(whoami):dev
 elif [[ $action == "stop" ]]; then
